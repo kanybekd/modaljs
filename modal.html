@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button{
+            padding:10px;
+            border:none;
+            
+        }
+        #container{
+            /* transform: translate(-50%,-50%); */
+            position: absolute;
+            top:30%;
+            left:40%;
+            display:none;
+            flex-direction: column;
+            width:300px;
+            height:300px;  
+            border:1px solid black; 
+            padding: 10px;     
+            border-radius: 10px;
+            outline: none;
+            color:black;
+
+            }
+         #head{
+             display:flex;
+             justify-content: space-between;
+             border-bottom: 1px solid red;
+             position: relative;
+             
+             background-color: lightcoral;
+             padding:10px;
+         }
+         button:hover,p:hover{
+             cursor: pointer;
+         }
+         #head p{
+             font-size: 10px;
+             margin:0;
+             position: absolute;
+             top:0px;
+             right: 2px;
+             border: 1px solid gray;
+             padding:5px;
+         }
+         .inputs{
+             display: flex;
+             margin-top: 30px;
+             flex-direction: column;
+         }
+         .inner{
+             padding: 10px;
+             left:5px;
+             margin-bottom: 10px;
+             margin-top: 10px;
+         }
+         h4{
+             margin: 0;
+         }
+         #head, .inner{
+            border-radius: 10px;
+         }
+         
+    </style>
+</head>
+<body>
+    <div><button id='btn'>submit</button></div>
+    
+    <div id = 'container'>
+        <div id='head'> 
+            <h4>Login </h4>
+            <p id='close'>X</p>
+        </div>
+        <div class='inputs'>
+            <input class='inner' type="email" name="" id="" placeholder="Type your email">
+            <input class='inner' type="password" name="" id="" placeholder="Passowrd">
+            <button class='inner' id='inner_button'>Submit</button>
+        </div>
+        
+    </div>
+    <script>
+        const cont=document.querySelector('#container');
+        const button=document.querySelector('#btn');
+        const cls=document.querySelector('#close');
+        button.addEventListener('click',function(){
+            document.body.style.background='#49465E';
+            cont.style.display='flex'
+
+        })
+        cls.addEventListener('click',function(){
+            cont.style.display='none'
+            
+            document.body.style.background='white';
+
+        })
+    </script>
+    
+</body>
+</html>
