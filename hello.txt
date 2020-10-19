@@ -8,3 +8,8 @@ console.log(filtered)
 for(let i=0;i<a.length;i++){
 	console.log(i)
 }
+
+funcion for checkingPAssword(str){
+	if(str.includes('@'){
+		return passowrd is valid}
+}
