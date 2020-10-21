@@ -1,0 +1,51 @@
+
+#wrapper{
+
+    width: 80%;
+    margin:50px auto;
+    border:1px solid red;
+}
+h2{
+    margin:5px 0 0 35%;
+}
+
+#input{
+    width: 80%;
+    margin:10px 10px;
+    font-size:24px;
+    padding:10px 0;
+}
+
+#btn{
+    width:100px;
+}
+.all-tasks{
+    margin:25px 0;
+    padding:0;
+    list-style-type: none;
+    font-size: 24px;
+}
+.all-tasks li{
+    position: relative;
+}
+
+.all-tasks li.toggle{
+    text-decoration: line-through;
+}
+
+.all-tasks li input{
+    margin-right: 20px;
+}
+
+.all-tasks li i{
+    position: absolute;
+    right:80px;
+}
+.btns{
+    background-color: aqua;
+    padding:10px;
+    font-size: 24px;
+}
+#bringBack{
+    margin-left: 65%;
+}

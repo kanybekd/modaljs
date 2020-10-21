@@ -13,3 +13,34 @@ funcion for checkingPAssword(str){
 	if(str.includes('@'){
 		return passowrd is valid}
 }
+
+sign in to account github
+ create new repo
+name repo
+click create button
+copy link
+clone copied link into your local folder via cmd git clone link
+
+cd repo name
+
+modify or add changes to the local folder
+
+git status
+
+git add .
+
+git commit -m "background and header styles changed, js functional codes implemented"
+
+git push
+
+
+
+
+
+
+
+
+
+
+
+
