@@ -13,19 +13,38 @@
         <input type="text" id='input' placeholder="what do you need to do today?">
         <button id='btn' class='btns'>Add</button>
      <ul class='all-tasks'>
-         <li><input type="checkbox">shopping <i class="fa fa-trash"> </i> </li>
-         <li><input type="checkbox">swimming <i class="fa fa-trash"> </i> </li>
-         <li><input type="checkbox">shopping <i class="fa fa-trash"> </i> </li>
-         <li><input type="checkbox">swimming <i class="fa fa-trash"> </i> </li>
-         <li><input type="checkbox">shopping <i class="fa fa-trash"> </i> </li>
-         <li><input type="checkbox">swimming <i class="fa fa-trash"> </i> </li>
-         <li><input type="checkbox">shopping <i class="fa fa-trash"> </i> </li>
-         <li><input type="checkbox">swimming <i class="fa fa-trash"> </i> </li>
-         <li><input type="checkbox">shopping <i class="fa fa-trash"> </i> </li>
-         <li><input type="checkbox">swimming <i class="fa fa-trash"> </i> </li>
+         <!-- <li><input type="checkbox">shopping <i class="fa fa-trash"> </i> </li>
+         <li><input type="checkbox">swimming <i class="fa fa-trash"> </i> </li> -->
     </ul>
     <button id='bringBack' class='btns'>Bring last removed task</button>
 
     </div>
+
+
+
+<script>
+    // let myList = document.querySelector('ul');
+    // let firstListItem = document.querySelector('li');
+    // myList.removeChild(firstListItem);
+    var wrapper=document.querySelector('#wrapper');
+    var inputToDo=document.querySelector('input');
+    var btnAdd=document.querySelector('btn');
+    var bringBack=document.querySelector('#bringBack');
+    var ulTasks=document.querySelector('.all-tasks');
+
+    wrapper.addEventListener('click',function(event){
+        if(event.target.getAttribute('id')==='btn'){
+            console.log('add button clicked')
+            createElements()
+        }
+
+        if(event.target.getAttribute('id')==='bringBack'){
+            console.log('hellooo bring back is clicked')
+        }
+    })
+
+
+</script>
+
 </body>
 </html>
