@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul{
+            background-color: aquamarine;
+            display: block;
+            width: 200px;
+
+        }
+
+        li{
+            color: blue;
+            margin: 5px;
+            border: 2px solid black;
+        }
+
+    </style>
+</head>
+<body>
+    <button id='btn'>click me</button>
+    
+    <div id='lists'>
+
+
+    </div>
+
+
+  
+    <script>
+        var button=document.querySelector('#btn')
+        var div=document.querySelector('#lists')
+
+        button.addEventListener('click',function(){
+
+            var parentUl=document.createElement('ul')
+            var childLi=document.createElement('li')
+
+            var head=document.createElement('h1')
+
+            childLi.innerHTML+='Hello'
+
+            parentUl.appendChild(childLi)
+
+            head.appendChild(childLi)
+
+            div.appendChild(head)
+
+            div.appendChild(parentUl)
+
+
+
+        })
+
+    </script>
+
+    
+</body>
+</html>

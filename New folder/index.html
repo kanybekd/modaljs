@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type='text/css' href="./style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div id='wrapper'>
+        <h2>Awesome To Do List</h2>
+        <input type="text" id='input' placeholder="what do you need to do today?">
+        <button id='btn' class='btns'>Add</button>
+        <p id='notification'></p>
+     <ul class='all-tasks'>
+         <!-- <li><input type="checkbox">shopping <i class="fa fa-trash"> </i> </li>
+         <li><input type="checkbox">swimming <i class="fa fa-trash"> </i> </li> -->
+    </ul>
+    <button id='bringBack' class='btns'>Bring last removed task</button>
+
+    </div>
+
+<script>
+    var wrapper=document.querySelector('#wrapper');
+    var inputToDo=document.querySelector('input');
+    var btnAdd=document.querySelector('btn');
+    var bringBack=document.querySelector('#bringBack');
+    var ulTasks=document.querySelector('.all-tasks');
+    var warning=document.querySelector('#notification');
+
+    listOfTasks=[]
+
+    wrapper.addEventListener('click',function(event){
+        if(event.target.getAttribute('id')==='btn'){
+            // console.log('add button clicked')
+            if(!(inputToDo.value.trim())){
+                
+                warning.innerHTML=' SORRY INPUT SPACE CAN NOT BE EMPTY'
+                // inputToDo.value='' 
+                return 
+            }
+            if(listOfTasks.includes(inputToDo.value)){
+                warning.innerHTML='SORRY THIS TASK ALREADY EXISTS!'
+
+            }
+            else{
+                warning.innerHTML=''
+
+                // console.log('task does not exist')
+                listOfTasks.push(inputToDo.value)
+                createElements(inputToDo)
+            }
+           
+           inputToDo.value='' 
+        }
+        if(event.target.getAttribute('id')==='bringBack'){
+            console.log('hellooo bring back is clicked')
+        }
+    })
+    function createElements(x){
+        var li=document.createElement('li')   //li created
+        var inputCheck=document.createElement('input')
+        inputCheck.type='checkbox'
+        li.appendChild(inputCheck)
+        li.innerHTML=li.innerHTML+x.value.trim()
+        var icon=document.createElement('i')
+        icon.setAttribute('class','fa fa-trash');
+        li.appendChild(icon)
+        ulTasks.appendChild(li)
+
+    }
+
+
+   
+
+
+</script>
+</body>
+</html>
