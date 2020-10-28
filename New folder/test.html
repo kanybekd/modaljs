@@ -27,32 +27,18 @@
 
 
     </div>
-
-
-  
     <script>
         var button=document.querySelector('#btn')
         var div=document.querySelector('#lists')
-
         button.addEventListener('click',function(){
-
             var parentUl=document.createElement('ul')
             var childLi=document.createElement('li')
-
             var head=document.createElement('h1')
-
             childLi.innerHTML+='Hello'
-
             parentUl.appendChild(childLi)
-
             head.appendChild(childLi)
-
             div.appendChild(head)
-
             div.appendChild(parentUl)
-
-
-
         })
 
     </script>

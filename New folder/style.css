@@ -59,7 +59,7 @@ h2{
 #notification{
     position: absolute;
     left:20%;
-    font-size: 2rem;
+    font-size: 1rem;
     color:red;
     font-weight: bold;
     margin:0;
