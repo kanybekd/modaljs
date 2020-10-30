@@ -9,10 +9,15 @@ body{
     margin:50px auto;
     border-radius: 10px;
     box-shadow: grey;
+    padding:10px;
     /* border:1px solid red; */
 }
-h2{
-    margin:5px 0 0 35%;
+/* h4{
+    margin:10px auto;
+} */
+#head{
+    display:flex;
+    justify-content: center;
 }
 
 #input{
@@ -23,7 +28,7 @@ h2{
 }
 
 #btn{
-    width:100px;
+    width:80px;
 }
 .all-tasks{
     margin:25px 0;
@@ -52,9 +57,7 @@ h2{
     padding:10px;
     font-size: 24px;
 }
-#bringBack{
-    margin-left: 65%;
-}
+
 
 #notification{
     position: absolute;

@@ -9,18 +9,17 @@
 </head>
 <body>
     <div id='wrapper'>
-        <h2>Awesome To Do List</h2>
-        <input type="text" id='input' placeholder="what do you need to do today?">
+        <div id='head'><h4>Awesome To Do List</h4></div>
+        
+        <input type="text" id='input' placeholder="add tasks for today">
         <button id='btn' class='btns'>Add</button>
         <p id='notification'></p>
      <ul class='all-tasks'>
          <!-- <li><input type="checkbox">shopping <i class="fa fa-trash"> </i> </li>
          <li><input type="checkbox">swimming <i class="fa fa-trash"> </i> </li> -->
     </ul>
-    <button id='bringBack' class='btns'>Bring last removed task</button>
-
+    <!-- <button id='bringBack' class='btns'>Bring last removed task</button> -->
     </div>
-
 <script>
     var wrapper=document.querySelector('#wrapper');
     var inputToDo=document.querySelector('input');
@@ -35,7 +34,6 @@
     wrapper.addEventListener('click',function(event){
         if(event.target.getAttribute('id')==='btn'){
             // console.log('add button clicked')
-
             // this section is for checking if input is emty or includes white space
             if(!(inputToDo.value.trim())){
                 alert('sorry input space can not be empty')
@@ -47,7 +45,6 @@
             if(listOfTasks.includes(inputToDo.value.toLowerCase())){
                 alert('This task already exists!')
                 // warning.innerHTML='SORRY THIS TASK ALREADY EXISTS!'
-
             }
             // otherwise create task 
             else{
@@ -56,7 +53,6 @@
                 listOfTasks.push(inputToDo.value.toLowerCase())
                 createElements(inputToDo)
             }
-           
            inputToDo.value='' 
         }
         if(event.target.getAttribute('type')==='checkbox'){
@@ -64,16 +60,18 @@
             event.target.parentElement.classList.toggle('toggle')
         }
         if(event.target.getAttribute('class')==='fa fa-trash'){
-            // console.log('trash icon is clicked')
-            
-            const x=listOfTasks.indexOf(event.target.parentElement.textContent)
-            delete listOfTasks[x]
-            event.target.parentElement.remove()
-            // console.log(event.target.parentElement.textContent)
-            // console.log(x)
-            
+
+            const x=listOfTasks.indexOf(event.target.parentElement.textContent.toLowerCase())
+            var r = confirm("Do you want to delete!");
+            if (r == true) {
+                delete listOfTasks[x]
+                event.target.parentElement.remove()   
+            } else {
+                alert("You pressed Cancel!");
+            }
+
+                     
         }
-      
     })
     function createElements(x){
         var li=document.createElement('li')   //li created
